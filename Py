@@ -46,3 +46,16 @@ goal_achieved = steps > 10000 or active_minutes > 30
 # Выводим результат на экран
 print(goal_achieved )
 ==================================
+# Баллы на физическом тесте
+physic_test = int(input())
+
+# Баллы на тесте по симуляции полета
+flight_test = int(input())
+
+# Комбинируем операции, чтобы получить конечный результат
+combi_ball = physic_test > 90 and flight_test  > 85
+
+# Выводим результат на экран
+print(combi_ball )
+======================================
+
