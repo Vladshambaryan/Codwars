@@ -59,3 +59,7 @@ combi_ball = physic_test > 90 and flight_test  > 85
 print(combi_ball )
 ======================================
 
+for i in range(3):
+    print('Fasten your seat belt')
+
+===========≈===========================
