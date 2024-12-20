@@ -63,3 +63,11 @@ for i in range(3):
     print('Fasten your seat belt')
 
 ===========≈===========================
+# Принимаем число в качестве ввода
+number = int(input())
+
+# Используем цикл while для обратного отсчета
+while number >=0:
+    print(number)
+    number = number - 1
+=======================================
