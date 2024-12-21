@@ -120,4 +120,19 @@ choice = int(input())
 print (games[choice] )
 ===========================≈===≈==≈≈===≈====≈
 
+# список с завтраками
+breakfasts = [
+  'Donuts', 'Waffles', 'Yogurt', 
+  'Burrito', 'Toast']
+
+# индекс элемента, который нужно заменить
+item = int(input())
+
+# заменить этот элемент на "Pancakes"
+breakfasts[item] = "Pancakes"
+
+# отобразить обновленный список
+print (breakfasts )
+=====================================≈=========
+
 
