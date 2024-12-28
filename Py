@@ -214,13 +214,14 @@ def actual(d1, d2):
 buy = actual(90, 100)
 print(buy)
 ========================================================================
-def agent(length, width=150):
-    area = length * width
-    perimeter = 2 * length + 2 * width
-    return area, perimeter
+def agent(dlina, shirina):  # Определяем функцию agent, которая рассчитывает площадь и периметр прямоугольника
+    area = dlina * shirina  # Вычисляем площадь: длина * ширина
+    perimeter = 2 * dlina + 2 * shirina  # Вычисляем периметр: 2 * длина + 2 * ширина
+    return area, perimeter  # Возвращаем два значения: площадь и периметр
 
-area, perimeter = agent(50)  # Вызываем функцию agent с длиной 50 и шириной 100, сохраняем результаты в переменные x и y
-print(area, perimeter)
+area, perimeter = agent(5, 10)  # Вызываем функцию с длиной 5 и шириной 10, сохраняем результаты в переменные
+print(area, perimeter)  # Выводим значения площади и периметра
+
 =======================================================================
 word = input()
 
@@ -238,11 +239,11 @@ result = discounted(300, 7)
 print(result)
 
 ==========================================
-def tax(doxod, stavka):
-    return doxod * stavka / 100
+def tax_nalog(doxod, nalog):  # Определяем функцию tax, которая вычисляет налог
+    return doxod * nalog / 100  # Возвращаем рассчитанный налог: доход * ставка / 100
 
-result = tax(1000,20)
-print(result)
+result = tax_nalog(100, 28)  # Вызываем функцию с доходом 100 и ставкой 28%, сохраняем результат в переменную result
+print(result)  # Выводим рассчитанный налог
 ===================================================
 
 
