@@ -253,3 +253,16 @@ while day <= input_days:
     print("Day " + str(day) + ": " + str(molec))
     day += 1
 =====================================================
+games = [
+  'Soccer', 'Tic Tac Toe', 'Snake',
+  'Puzzle', 'Rally']
+choice = int(input())
+print(games[choice])
+========================================
+fasts = [
+  'Donuts', 'Waffles', 'Yogurt',
+  'Burrito', 'Toast']
+item = int(input())
+fasts[item] = 'Pancakes'
+print(fasts)
+=======================================
