@@ -384,6 +384,109 @@ def to_deliver(delivery):
         print('Enter your address')
 to_deliver(delivery)
 =============================================================
+score = 697
+def cl(score):
+    if score >= 70:
+        return True
+    else:
+        return False
+
+print(cl(score))
+#=========================================
+books = ['1984', 'War and Peace', 'The Great Gatsby', 'Animal Farm']
+book = 'Animal Farm' # название книги, которое нужно найти.
+
+def book_in_library(books, book):
+    return book in books
+
+print(book_in_library(books, book))
+#=================================================
+group = ['1984', 'War and Peace', 'The Great Gatsby', 'Animal Farm']
+def check_count(group):
+    if len(group) >= 3:
+        return True
+    else:
+        return False
+print(check_count(group))
+
+==================================================
+prices = [33, 49, 55, 14]
+#Функция sum принимает список возвращает сумму всех его элементов.
+total = sum(prices)
+print(total)
+=================================================
+prices = [20, 30, 40, 50, 60]
+# Функция sum(prices) возвращает сумму всех элементов списка
+total = sum(prices)
+print("Total Price:", total)
+# Функция len(prices) возвращает количество элементов в списке
+number = len(prices)
+print("Count:", number)
+# Средняя цена рассчитывается общая сумма делённая на количество
+avg_price = total/number
+print("Average Price:", avg_price)
+================================================
+prices = [33, 49, 55, 14]
+min_price = min(prices)
+print(min_price)
+prices = [33, 49, 55, 14]
+min_price = max(prices)
+print(min_price)
+prices = [33, 49, 55, 14]
+min_price = len(prices)
+print(min_price)
+prices = [33, 49, 55, 14]
+min_price = sorted(prices)
+print(min_price)
+===============================================================
+players = ["Zoe", "Liam", "Emma", "Noah", "Olivia"]
+sort_players = sorted(players)# сортировка по алфавиту
+print(sort_players)
+players = ["Zoe", "Liam", "Emma", "Noah", "Olivia"]
+sort_players = sorted(players, reverse=True)
+print(sort_players)
+==================================================================
+ages = [25, 36, 33, 19, 56]
+sort_ages = sorted(ages, reverse=True)
+print(sort_ages[0:3])
+================================================================
+points = (12, 14, 9, 10, 9)
+for point in points:
+    if point > 10:
+        print(point, 'passed')
+=============================================================
+scores = (98, 96, 91, 88, 64)
+winner, *rest = scores# в распаковке с кортежами неизвестной длины.
+print(winner)
+print(rest)
+======================================================================
+guests = {'Anna', 'Mery', 'Jonathan'}
+guests.add('Robert')#add добавляет новый элемент 'Robert' в множество.
+#В отличие от remove, discard не вызывает ошибку, если элемента нет в множестве.
+guests.remove('Mery')
+print(guests)
+=====================================================================
+guests = {'Anna', 'Mery', 'Jonathan'}
+guests.clear()
+print(guests)
+====================================================================
+set1 = {'apple', 'banana'}
+set2 = {'banana', 'cherry'}
+#Метод union возвращает новое множество,
+#содержащее все уникальные элементы из обоих множеств.
+combi = set1.union(set2)
+print(combi)
+====================================================================
+set1 = {'apple', 'banana', 'cherry'}
+set2 = {'banana', 'orange'}
+#difference() возвращает которые присутствуют только в первом наборе
+combi = set1.difference(set2)
+print(combi)
+==================================================================
+
+
+
+
 
 
     
