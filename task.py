@@ -549,13 +549,74 @@ car = {
 car.pop('Color')# удаление
 print(car)
 ==========================================================================
-
-
-
-
-
-
-
+car = {
+  "Brand": "Ford",
+  "Model": "Mustang",
+  "Color": "red"
+}
+print('Color' in car)
+========================================================================
+car = {
+  "Brand": "Ford",
+  "Model": "Mustang",
+  "Color": "red"
+}
+for i in car: # итерация по ключам
+    print(i)
+for i in car.values(): # итерация по значениям
+    print(i)
+======================================================================== 
+nums = []
+for x in range(1, 51):
+    nums.append(x)
+print(nums)
+nums = [ x for x in range(1,51)]
+print(nums)
+============================================================================
+nums = [x*2 for x in range(11)]
+print(nums)
+#========================================================
+tags = ["travel", "vacation", "journey"]
+hash = ['#' + x for x in tags]
+print(hash)
+===========================================================================
+users = ["Brandon", "Emma", "Brian",
+"Sophia", "Bella", "Ethan",
+"Ava", "Benjamin", "Mia", "Chloe"]
+#перебирает каждый элемент x из списка users.
+group = [x for x in users if x[0] == 'B']
+print(group)
+#======================================================
+sports = ["Football", "Basketball", "Tennis", "Golf", "Volleyball"]
+#перебирает каждый элемент x из списка sports
+group = [x for x in sports if "ball" in x]
+print(group)
+#=============================================================
+scores = [68, 74, 89, 64, 85, 93]
+#перебирает каждый элемент x из списка scores.
+#добавляет в новый список только те элементы x,
+#которые удовлетворяют условию (то есть больше или равны 74)
+winner = [x for x in scores if x >= 74]
+print(winner)
+==================================================
+words = ["tree", "button", "cat", "window", "defenestrate"]
+#перебирает каждый элемент x из списка words
+# который включает только слова длиннее 4 букв
+result = [x for x in words if len(x) > 4]
+print(result)
+=============================================================
+citys = ['moscow', 'yerevan,', 'kiev']
+result = [x.capitalize() for x in citys]
+print(result)
+============================================================
+tags = ['moscow', 'yerevan,', 'kiev']
+result = ['##$' + x for x in tags]
+print(result)
+==============================================================
+points = [3, 77, 22, 11, 7, 9]
+result = [x for x in points if x >= 8]
+print(result)
+==============================================================
 
 
 
