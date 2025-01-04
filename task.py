@@ -483,6 +483,88 @@ set2 = {'banana', 'orange'}
 combi = set1.difference(set2)
 print(combi)
 ==================================================================
+car = {
+  "brand": "Audi",
+  "model": "Q5",
+  "year": "2008"
+}
+print(car['brand'])
+print(car['model'])
+print(car['year'])
+======================================================
+contact = {
+  "name": "John",
+  "company": "Google",
+}
+print(contact["company"])# Получение значения по ключу 'company'
+=================================================================
+contact = {
+    "name": "vlad",
+    "age": "62",
+}
+name = contact.get("name")# Получение значения по ключу 'name'
+print(name)
+age = contact.get("age")# Попытка получить значение по по ключу 'age'
+print(age)
+==================================================================
+contact = {
+    "name": "vlad",
+    "age": 45
+}
+info_keys = contact.keys()
+info_values = contact.values()
+info = car.items()
+print(info)
+print(info_keys)
+print(info_values)
+==================================================================
+user1 = {
+    "Name": "Albert",
+    "Age": 29
+}
+user1["Age"] = 30# значение по ключу "Age" в словаре обновляется на 30
+print(user1["Age"])
+print(user1.items())
+======================================================================
+user = {
+    'name': 'albert',
+    'age': 29
+}
+user.update({'age': 35}) # значение по ключу "Age" обновляется на 35
+print(user['age'])
+print(user.items())
+=====================================================================
+user = {
+    'name': 'albert',
+    'company': 'google'
+}
+user.update({"Age": 30, "Surname": "Johnson"})# значение обновляется на "Age": 30, "Surname": "Johnson"
+print(user.items())
+=======================================================================
+car = {
+  "Brand": "Ford",
+  "Model": "Mustang",
+  "Color": "red"
+}
+car.pop('Color')# удаление
+print(car)
+==========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
