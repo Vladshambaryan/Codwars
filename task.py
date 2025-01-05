@@ -617,7 +617,109 @@ points = [3, 77, 22, 11, 7, 9]
 result = [x for x in points if x >= 8]
 print(result)
 ==============================================================
+points = (12, 14, 9, 10, 9)
+result = [x for x in points if x >= 10]
+print(result, 'passed')
+==============================================================
+print([x for x in (12, 14, 9, 10, 9) if x >= 10], 'passed')
+==============================================================
+scores = [45, 67, 89, 34, 56, 77, 49, 91, 52]
+result = [x for x in scores if x >= 67]
+print(result)
+==============================================================
+data = ["anna", "bob", "mery"]
+names = [x.capitalize() for x  in data]
+print(names)
+=========================================================
+#==========================================================
+prices = [250, 300, '777', 400]
+try:
+  total = sum(prices)
+  print(total)
+except TypeError:
+  print("Invalid data type")
+print("Happy Shopping")
+#==========================================================
+color = "Green"
+try:
+  print(color)
+except NameError:
+  print("Check the variable name")
+  #===================================================
+colors = ["Red", "Yellow", "Green"]
+try:
+  print(colors[10])
+except:
+  print("Error")
+#======================================================
+price = input()
+try:
+    price_value = int(price)
+except ValueError:
+    print("Please enter a number")
+==========================================================
+products = ["Water", "Chocolate", "Chips", "Soda", "Sandwich"]
+choice_index = int(input())
+try:
+    print(products[choice_index])
+except:
+    print('wrong index')
+==================================================================
+prices = [559, 879, "N/A", 349]
+try:
+  print(sum(prices))
+except TypeError:
+  print("Check the prices")
+finally:
+  print("Need help? Contact us")
+=========================================================
+books = ['Harry Potter', 'Dune', 'Emma']
+try:
+  choice = books[1]
+except IndexError:
+  print("Out of range")
+else:
+  print(choice + " Привет как дела!")
+#=============================================================
+products = ['ball', 'toy', 'paper']
+try:
+    count = len(products)
+except:
+    print("Error")
+else:
+    print("Count of products:", count)
+#==================================================================
+products = ['ball', 'toy', 'paper']
+try:
+    count = len(products)
+except:
+    print("Error")
+finally:
+    print("Count of products:", count)
+#==========================================================
+try:
+  print(len(3745))
+except:
+  print("Error")
+finally:
+  print("Save")
+==========================================================
+print('Rate from 0 to 10')
+rating = 15
+if rating > 10 or rating < 10:
+    raise ValueError ("Rate from 0 to 10") #Пользовательские исключения
+=========================================================
+price = 995
+if price > 500:
+  raise ValueError ("Rate > 500")#Пользовательские исключения
+========================================================
+temp = -15
+if temp > 50 or temp < -10:
+    raise ValueError('invalid range') #Пользовательские исключения
+=====================================================
 
+
+    
 
 
 
