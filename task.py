@@ -722,7 +722,7 @@ try:
 except ValueError:
   print("Cannot add different types")
 except TypeError:
-  print("Type mismatch error") # Не соответствие типов
+  print("Не соответствие типов") # Не соответствие типов
 ========================================================
 
 
