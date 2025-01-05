@@ -717,6 +717,13 @@ temp = -15
 if temp > 50 or temp < -10:
     raise ValueError('invalid range') #Пользовательские исключения
 =====================================================
+try:
+  print(3 + "3")
+except ValueError:
+  print("Cannot add different types")
+except TypeError:
+  print("Type mismatch error") # Не соответствие типов
+========================================================
 
 
     
