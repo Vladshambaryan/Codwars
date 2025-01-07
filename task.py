@@ -724,12 +724,132 @@ except ValueError:
 except TypeError:
   print("Не соответствие типов") # Не соответствие типов
 ========================================================
+def welcome(name):
+    return 'welcome,' + name
+greet('bob')
+======================================================
+#=======================================================
+def welcome(name):
+    return 'helllo,' + name
+greet = welcome
+print(greet('bob'))
+#=======================================================
+def shout(text):
+    return text.upper()
+yell = shout
+print(yell('helllo'))
+#====================================================
+def one(name):
+    return 'welcome,' + name
+def two(name, func):
+    return func(name)
+print(two('Alice', one))
+=====================================================
+def welc(name):
+  return "Welcome, " + name
 
+def bye(name):
+  return "Goodbye, " + name
 
-    
+def process_user(name, func):# Функция высшего порядка
+  return func(name)
 
+print(welc("Vlad"))
+print(bye("Miqael"))
+print(process_user("Vlad", welc))
+print(process_user("Miqael", bye))
+======================================================
+def book_title(title):
+    return 'Название книги: ' + title
+def info(title, func):
+    return func(title)
+print(info('Великий Гэтсби', book_title))
+=======================================================
+     LAMBDA
+greet = lambda name: 'Welcome, ' + name # лямбда называются анонимными функциями
+# ^ lambda argument ^    ^ выражение ^
+print(greet('bob'))
+================================
+x = (lambda price, count : price * count) (2,10)
+print(x)
+=================================
+res = (lambda x, y: x + y) (2, 3)
+print(res)
+====================================
+def mult(n):
+  return lambda a : a * n
 
-
+doubler = mult(2)
+tripler = mult(3)
+print(doubler(5))
+print(tripler(5))
+=======================================
+names = ["alice", "bob", "CHARLIE", "dEborah"]
+def capitalize(name):
+    return name.capitalize()
+capitalized = map(capitalize, names)#  map — это итерируемый объект,
+# который преобразует элементы "на лету"
+capitalized = list(capitalized)# list(capitalized) преобразует итерируемый объект,
+# возвращенный map, в список.
+print(capitalized)
+#=========================================
+names = ["alice", "bob", "CHARLIE", "dEborah"]
+capitalized = list(map(lambda name: name.capitalize(), names))
+print(capitalized)
+================================================================
+ prices = [20, 30, 10, 40]
+def discount(price):
+    discounted_price = price * 0.5
+    return discounted_price
+discounted_prices = list(map(discount, prices))
+                          # ^функция^ ^итерируемый^
+print(discounted_prices)
+============================================   
+count_scores = [80, 60, 70, 40, 90]
+def passing(score):
+    return score >= 70
+status = list(map(passing, count_scores))
+               # ^функция^ ^итерируемый^
+print(status)
+#=============================================
+numbers = [1, 2, 3]
+doubled = list(map(lambda x: x*2, numbers))
+print(doubled)
+#=============================================
+numbers = (1, 2, 3)
+doubled = tuple(map(lambda x: x*2, numbers))
+print(doubled)
+#=============================================
+numbers = {1, 2, 3}
+doubled = set(map(lambda x: x*2, numbers))
+print(doubled)
+=========================================
+products = ("Table", "Sofa", "Cushion", "Bookshelf", "Vase")
+filtered_prod = tuple(filter(lambda name: len(name) == 4, products))
+# filter удобна для отбора (for + if) элементов, удовлетворяющих определенным критериям.
+# len(name) проверяет, имеет ли строка длину ровно 4 символа.
+print(filtered_prod)
+=============================================
+products = {'Table': 110, 'book': 120, 'car': 45, 'Lamp': 70}
+filtered_products = dict(filter(lambda item: item[1] < 90, products.items()))
+# filter обрабатывает каждую пару (ключ, значение) из products.items(),
+# применяя условие из lambda.
+# item[1] — доступ к значению (цена продукта)
+# item[1] < 90 — условие: выбрать только те элементы где (цена) меньше 90.
+print(filtered_products)
+================================================
+names = ["John", "Emma", "Jake", "Rachel", "James"]
+filtered = list(filter(lambda name: name[0] == 'J', names))
+# filter берет функцию и итерируемый объект
+# name[0] — это первая буква имени
+# name[0] == 'J' возвращает True, если имя начинается с буквы 'J'
+print(filtered)
+==================================================
+user_answers = ["Yes", "", "No", "", "Maybe", "", "Yes"]
+filtred = list(filter(lambda answer: answer != '', user_answers))
+# фильтрация где ответ не пуст
+print(filtred)
+===================================================
 
 
 
