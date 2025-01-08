@@ -850,8 +850,67 @@ filtred = list(filter(lambda answer: answer != '', user_answers))
 # фильтрация где ответ не пуст
 print(filtred)
 ===================================================
-
-
+                 *ARGS
+def total(numbers):
+  result = 0
+  for i in numbers:
+    result+=i
+  return result
+nums = [1,2,3,4,5]
+print(total(nums))
+============================================
+def total(*prices): # * позволяет передавать в функцию
+    # любое количество аргументов. собирает аргументы в кортеж
+    result = 0
+    for price in prices:# В цикле for каждый элемент из prices суммируется
+        result += price
+    return result
+print(total(1, 2, 3, 4, 5))
+print(total(1, 2, 3, 4, 5, 6, 7))
+print(total(1, 2, 3))
+=====================================================
+def show(category, *counts): # * собирает аргументы в кортеж
+    # category — обязательный позиционный аргумент
+    # *counts позволяет передать произвольное количество аргументов
+    # "Electronics" передается как значение аргумента category
+    # "Laptop", "Smartphone", и "Tablet" собираются в кортеж counts.
+  print("Category: " + category)
+  for count in counts:
+    print(count)
+show("Electronics", "Laptop", "Smartphone", "Tablet")
+=====================================================
+                    # ** kwargs
+def display_info(**json): # **kwargs принимает аргументы в виде словаря,
+    # состоящего из пар ключ:значение. группирует их в словарь с парой ключ:значение
+    for key, value in json.items():
+        print(key, ':', value)
+display_info(name='Vlad', age=46, city="New York")
+======================================================
+def outer_function():
+    print("Hello from the outer function")
+    def inner_function():
+        print("Hello from the inner function")
+    # inner_function выводит строку "Hello from the inner function"
+    inner_function()
+# outer_function выводится строка "Hello from the outer function"
+outer_function()
+#================================================
+def greet(name):
+    print("Hey", name)
+    def account():
+        return "Your account is created!"
+    message = account() #  account вызывается, и её результат сохраняется в переменной message
+    return message # Функция greet возвращает значение переменной message,
+    # то есть строку "Your account is created!"
+print(greet("Bob"))
+#===============================================
+def order():
+  def prepare():
+    return "Your meal is being prepared!"
+  status = prepare() # prepare вызывается,
+  # и её возвращаемое значение сохраняется в переменной status.
+  return status
+print(order())
 
 
 
