@@ -688,7 +688,7 @@ except:
     print("Error")
 else:
     print("Count of products:", count)
-#==================================================================
+==================================================================
 products = ['ball', 'toy', 'paper']
 try:
     count = len(products)
@@ -696,7 +696,7 @@ except:
     print("Error")
 finally:
     print("Count of products:", count)
-#==========================================================
+==========================================================
 try:
   print(len(3745))
 except:
@@ -728,7 +728,7 @@ def welcome(name):
     return 'welcome,' + name
 greet('bob')
 ======================================================
-#=======================================================
+
 def welcome(name):
     return 'helllo,' + name
 greet = welcome
@@ -765,7 +765,11 @@ def info(title, func):
     return func(title)
 print(info('Великий Гэтсби', book_title))
 =======================================================
-     LAMBDA
+                              LAMBDA
+добавить_два = lambda x: x + 2 
+#lambda мы сразу говорим: "Возьми x и прибавь к нему 2!".
+print(добавить_два(5))  # Результат: 7
+==========================================================================
 greet = lambda name: 'Welcome, ' + name # лямбда называются анонимными функциями
 # ^ lambda argument ^    ^ выражение ^
 print(greet('bob'))
@@ -811,7 +815,7 @@ def passing(score):
 status = list(map(passing, count_scores))
                # ^функция^ ^итерируемый^
 print(status)
-#=============================================
+=============================================
 numbers = [1, 2, 3]
 doubled = list(map(lambda x: x*2, numbers))
 print(doubled)
@@ -824,6 +828,10 @@ numbers = {1, 2, 3}
 doubled = set(map(lambda x: x*2, numbers))
 print(doubled)
 =========================================
+числа = [1, 2, 3, 4, 5, 6]
+чётные = list(filter(lambda x: x % 2 == 0, числа))
+print(чётные)  # Результат: [2, 4, 6]
+=================================================
 products = ("Table", "Sofa", "Cushion", "Bookshelf", "Vase")
 filtered_prod = tuple(filter(lambda name: len(name) == 4, products))
 # filter удобна для отбора (for + if) элементов, удовлетворяющих определенным критериям.
@@ -879,7 +887,7 @@ def show(category, *counts): # * собирает аргументы в корт
     print(count)
 show("Electronics", "Laptop", "Smartphone", "Tablet")
 =====================================================
-                    # ** kwargs
+                    ** kwargs
 def display_info(**json): # **kwargs принимает аргументы в виде словаря,
     # состоящего из пар ключ:значение. группирует их в словарь с парой ключ:значение
     for key, value in json.items():
@@ -906,25 +914,44 @@ print(greet("Bob"))
 =============================================
 def order():
   def prepare():
-    return "Your meal is being prepared!"
+    return "Твой завтрак готов!"
   status = prepare() # prepare вызывается,
   # и её возвращаемое значение сохраняется в переменной status.
   return status
 print(order())
 ============================================≈===========
-def мигающие_фары(функция):
-    def обертка():
+                        @@@ DECORATORS
+# Декоратор
+def superman_cape(func):
+    def beautiful_box(*args, **kwargs): # obyortka
+        print("Надеваем супергеройский плащ!")
+        print("Теперь у тебя суперспособности!")
+        result = func(*args, **kwargs)
+        return result
+    return beautiful_box
+#Декораторы используются для изменения поведения
+# функции без изменения её исходного кода
+@superman_cape
+def man(name):
+    print(f"Я просто {name}, обычный человек.")
+
+man("Петя")
+=====================================================
+# Декоратор
+def flashing_headlights(func):
+    def beautiful_box(): # obyortka
         print("Включаем мигающие фары!")
-        функция()
+        func()
         print("Выключаем мигающие фары!")
-    return обертка
-
-@мигающие_фары
-def машинка_едет():
+    return beautiful_box
+#Декораторы используются для изменения поведения
+# функции без изменения её исходного кода
+@flashing_headlights
+def car_is_moving():
     print("Машинка едет!")
-
-машинка_едет()
-===================================================================
+    
+car_is_moving()
+=====================================================
 
 
 
