@@ -1,1 +1,136 @@
+numbers = [1, 2, 3]
+doubled = list(map(lambda x: x*2, numbers))
+print(doubled)
+#=============================================
+numbers = (1, 2, 3)
+doubled = tuple(map(lambda x: x*2, numbers))
+print(doubled)
+#=============================================
+numbers = {1, 2, 3}
+doubled = set(map(lambda x: x*2, numbers))
+print(doubled)
+=========================================
+числа = [1, 2, 3, 4, 5, 6]
+чётные = list(filter(lambda x: x % 2 == 0, числа))
+print(чётные)  # Результат: [2, 4, 6]
+=================================================
+products = ("Table", "Sofa", "Cushion", "Bookshelf", "Vase")
+filtered_prod = tuple(filter(lambda name: len(name) == 4, products))
+# filter удобна для отбора (for + if) элементов, удовлетворяющих определенным критериям.
+# len(name) проверяет, имеет ли строка длину ровно 4 символа.
+print(filtered_prod)
+=============================================
+products = {'Table': 110, 'book': 120, 'car': 45, 'Lamp': 70}
+filtered_products = dict(filter(lambda item: item[1] < 90, products.items()))
+# filter обрабатывает каждую пару (ключ, значение) из products.items(),
+# применяя условие из lambda.
+# item[1] — доступ к значению (цена продукта)
+# item[1] < 90 — условие: выбрать только те элементы где (цена) меньше 90.
+print(filtered_products)
+================================================
+names = ["John", "Emma", "Jake", "Rachel", "James"]
+filtered = list(filter(lambda name: name[0] == 'J', names))
+# filter берет функцию и итерируемый объект
+# name[0] — это первая буква имени
+# name[0] == 'J' возвращает True, если имя начинается с буквы 'J'
+print(filtered)
+==================================================
+user_answers = ["Yes", "", "No", "", "Maybe", "", "Yes"]
+filtred = list(filter(lambda answer: answer != '', user_answers))
+# фильтрация где ответ не пуст
+print(filtred)
+===================================================
+summa = (lambda x, y: x + y) (3,5)
+print(summa)
+#==
+kwadro = (lambda x: x * 4) (4)
+print(kwadro)
+#==
+even = (lambda x: x % 2 == 0) (10)
+print(even)
+#==
+num = [5, 12, 7, 18, 3, 21]
+number = list(filter(lambda x: x > 10, num))
+print(number)
+#==
+nums = [1, 2, 3, 4]
+result = list(map(lambda x: x * 3, nums))
+print(result)
+#==
+man = (lambda x, y: max(x, y,)) (10, 20)
+print(man)
+#==
+strings = ["яблоко", "груша", "киви", "арбуз"]
+result = sorted(strings, key=lambda x: len(x))  # Сортируем строки по длине
+print(result)
+#==
+# Параметры: string (строка, которую проверяем) и letter (буква,
+# с которой должно начинаться слово).
+starts_with = lambda string, letter: string.startswith(letter)
+print(starts_with("apple", "a"))  # True
+#==
+number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+filtered = list(filter(lambda x: x % 2 == 0, number))
+print(filtered)
+#==
+world = ["apple", "banana", "kiwi", "watermelon", "pear"]
+filtered = list(filter(lambda x: len(x) > 5, world))
+print(filtered)
+#==
+nums = [3, 8, 15, 23, 4, 10, 42]
+result = list(filter(lambda x: x > 10, nums))
+print(result)
+#==
+strings = ["apple", "banana", "apricot", "cherry", "avocado"]
+result = list(filter(lambda x: x[0] == 'a', strings))
+print(result)
+#==
+nums = [1, 2, 3, 4, 5]
+iterable = list(map(lambda x: x * 2, nums))
+print(iterable)
+#==
+numss = [2, 4, 6, 8]
+iterable = list(map(lambda x: x * x, numss))
+print(iterable)
+#==
+str = ["apple", "banana", "cherry"]
+iterable = list(map(lambda x: x.upper(), str))
+print(iterable)
+#==
+names = ["John", "Emma", "Sophia"]
+iterable = list(map(lambda x: 'Dr. ' + x, names))
+print(iterable)
+#==
+nums = [1, 2, 3, 4, 5, 6]
+iterable = filter(lambda x : x % 2 == 0, nums)
+result = list(map(lambda x: x * 3, iterable))
+print(result)
+#==
+strings = ["apple", "cat", "banana", "dog", "elephant"]
+iterable = filter(lambda x: len(x) > 4, strings)
+result = list(map(lambda x: x.upper(), iterable))
+print(result)
+#======================================================
+def total(*prices):
+    result = 0
+    for price in prices:
+        result += price
+    return result
+print(total(1, 2, 3, 4))
 
+total = (lambda *args: sum(args)) (1, 2, 3, 4)
+print(total)
+#==
+def total(*numes):
+    result = 1
+    for num in numes:
+        result *= num
+    return result
+print(total(2, 3, 4))
+#==
+def total(*args):
+    return max(args)
+print(total(3, 7, 2, 8, 1))  # Выведет: 8
+
+maximum = (lambda *args: max(args)) (3, 7, 2, 8, 1)
+print(maximum)
