@@ -107,10 +107,11 @@ iterable = filter(lambda x : x % 2 == 0, nums)
 result = list(map(lambda x: x * 3, iterable))
 print(result)
 #==
-strings = ["apple", "cat", "banana", "dog", "elephant"]
-iterable = filter(lambda x: len(x) > 4, strings)
-result = list(map(lambda x: x.upper(), iterable))
-print(result)
+def fruits(*args):
+    iterable = filter(lambda x: len(x) > 4, args)
+    result = tuple(map(lambda x: x.upper(), iterable))
+    return result
+print(fruits("apple", "cat", "banana", "dog", "elephant"))
 #======================================================
 def total(*prices):
     result = 0
@@ -128,7 +129,7 @@ def total(*numes):
         result *= num
     return result
 print(total(2, 3, 4))
-#==
+#==========================================================================
 def total(*args):
     return max(args)
 print(total(3, 7, 2, 8, 1))  # Выведет: 8
