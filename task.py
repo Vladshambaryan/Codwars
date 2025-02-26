@@ -244,6 +244,14 @@ def tax_nalog(doxod, nalog):  # Определяем функцию tax, кот�
 
 result = tax_nalog(100, 28)  # Вызываем функцию с доходом 100 и ставкой 28%, сохраняем результат в переменную result
 print(result)  # Выводим рассчитанный налог
+===============================================
+def tax_nalog(doxod, nalog):
+    nalog = doxod * nalog / 100 
+    casch = doxod * (1 - nalog / 100)
+    return casch, nalog
+
+result_nalog = tax_nalog(100, 28)  
+print(f"результат {result_nalog}")
 ===================================================
 molec = int(input())
 input_days = int(input())
